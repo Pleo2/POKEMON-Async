@@ -1,0 +1,88 @@
+<!-- Para iniciar tailwind npx tailwind init & npm i tailwind -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="./assets/main.js"></script>
+
+  <title>pokeAsync</title>
+</head>
+<body class="bg-black">
+  <div class="relative bg-black overflow-hidden ">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative z-10 pb-8 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-32">
+        <div>
+          <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+            <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl ">
+              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                  <a href="#">
+                    <span class="sr-only">mmmm</span>
+                    <img class="h-8 w-auto sm:h-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png">
+                  </a>
+                </div>
+              </div>
+              <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">About</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Projects</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Contact</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <main class="mt-8 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-11 lg:mt-16 lg:px-8 xl:mt-24 ">
+          <div class="sm:text-center lg:text-left">
+            <!-- title principal page -->
+            <h1 class="cursor-pointer font-sans font-black text-gray-400 md:text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
+              <span class="block text-4xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">POKEMON</span>
+              <span class="block  text-3xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Async</span>
+            </h1>
+
+            <p class="mt-5 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-80 md:text-sm lg:mx-0 lg:text-base lg:w-96 lg:mt-8 xl:w-full xl:text-xl xl:mt-7">Charizard Shiny (リザードン Lizardon en japonés) es un Pokémon de tipo fuego/volador introducido en la primera generación.</p>
+
+            <p class="mt-36 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-6 md:text-sm lg:mx-0 lg:w-96 lg:text-base xl:w-full xl:text-xl">Shiny Pokémon en inglés; いろちがい ポケモン Pokémon de diferentes colores en japonés es un Pokémon que presenta un color especial y único. Estos Pokémon son muy raros de encontrar, puesto que pueden aparecer de forma aleatoria, ya sea como Pokémon salvajes, Pokémon legendarios, entregados por alguien en el juego (como los Pokémon iniciales) o nacidos de un huevo.
+            <br>
+            <span class="text-gray-800 font-extralight transition durantion-300 hover:text-gray-500 xl:text-lg">(fuente <span><a
+            target="_blank" href="https://www.wikidex.net/wiki/Charizard">wikidex.net</a></span>)</span></p>
+            
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="w-1/3 absolute backdrop-contrast-100 top-64 left-2/4 -translate-x-2/4 md:top-56 lg:mt-16 lg:left-3/4   xl:mt-16 xl:ml-16">
+      <img class="object-cover md:w-96 md:h-auto lg:w-80 xl:scale-125"
+        src="https://media.tenor.com/ptl9U5YvK_wAAAAj/shiny-charizard-fire.gif" alt="pokemon sharizar pixel art, png">
+    </div>
+  </div>
+  <div class="bg-black">
+    <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <h2 class="text-2xl font-extrabold tracking-tight text-gray-300">Last YouTube Videos</h2>
+      <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8" id="content">
+        <!-- content -->
+      </div>
+    </div>
+  </div>
+  <div class="bg-black">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <h2 class="text-3xl font-extrabold tracking-tight text-gray-300 sm:text-4xl md:text-2xl md:ml-16 lg:ml-0 xl:ml-0">
+        <span class="block">Contact</span>
+        <span class="block text-red-700">keep in touch.</span>
+      </h2>
+      <div class="mt-8 flex md:ml-16 lg:mt-0 lg:flex-shrink-0 cursor-pointer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="github" class="cover h-9 w-9 mt-1 mr-2 brightness-200">
+
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48"
+          style=" fill:#000000;">
+          <path fill="#ffffff"
+            d="M42,12.429c-1.323,0.586-2.746,0.977-4.247,1.162c1.526-0.906,2.7-2.351,3.251-4.058c-1.428,0.837-3.01,1.452-4.693,1.776C34.967,9.884,33.05,9,30.926,9c-4.08,0-7.387,3.278-7.387,7.32c0,0.572,0.067,1.129,0.193,1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64,1.082-1,2.349-1,3.686c0,2.541,1.301,4.778,3.285,6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0,0.022,0,0.055,0,0.086c0,3.551,2.547,6.508,5.923,7.181c-0.617,0.169-1.269,0.263-1.941,0.263c-0.477,0-0.942-0.054-1.392-0.135c0.94,2.902,3.667,5.023,6.898,5.086c-2.528,1.96-5.712,3.134-9.174,3.134c-0.598,0-1.183-0.034-1.761-0.104C9.268,36.786,13.152,38,17.321,38c13.585,0,21.017-11.156,21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763,15.197,41.013,13.905,42,12.429">
+          </path>
+        </svg>  
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
