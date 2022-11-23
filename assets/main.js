@@ -1,14 +1,18 @@
 const API =
   "https://youtube-v31.p.rapidapi.com/search?channelId=UCcqvmc1uRblenC_-z2pizfA&part=snippet%2Cid&order=date&maxResults=9";
-const content = null || document.getElementById("content");
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
-    "X-RapidAPI-Key": "c68edbdba9mshc3cb6eb8038f3b2p1f444ajsna5de19fe1256",
-  },
-};
+  
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+      "X-RapidAPI-Key": "c68edbdba9mshc3cb6eb8038f3b2p1f444ajsna5de19fe1256",
+    },
+  };
+
+//----------------------------------------------------------------------------------------------------------------------------//  
+
+const content = null || document.getElementById("content");
 
 async function fetchData(urlApi) {
   const response = await fetch(urlApi, options);
@@ -40,7 +44,9 @@ async function fetchData(urlApi) {
       .slice(0, 8)
       .join("")}
     `;
-
     content.innerHTML = view;
-  } catch {}
+
+  } catch (error) {
+    console.log(error)
+  }
 })();

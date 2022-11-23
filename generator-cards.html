@@ -1,0 +1,49 @@
+<!-- "npx tailwindcss init" para iniciar tailwind -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer type="module" src="assets/generator.js"></script>
+  <title>Generator cards</title>
+</head>
+<body class=" bg-black">
+  <div class="relative bg-black overflow-hidden ">
+    <div class="max-w-7xl mx-auto ">
+      <header class="relative z-10 pb-8 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16">
+        <div>
+          <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+            <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl ">
+              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                  <a href="./index.html">
+                    <span class="sr-only">mmmm</span>
+                    <img class="h-8 w-auto sm:h-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png">
+                  </a>
+                </div>
+              </div>
+              <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
+                <a href="#" class="font-medium text-gray-200 hover:text-gray-500">Generator Cards</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Projects</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Contact</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class=" h-full w-72 bg-black flex flex-row mx-auto mt-16">
+        <div class="flex flex-col gap-10 justify-center justify-items-center w-96 h-auto rounded-md" id="content">
+          <button class="bg-black self-center h-10 w-28 border-4 border-red-600 text-white font-mono font-black text-xl animate-pulse hover:scale-110 transition-transform duration-300 ">Start</button>
+          <img src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif" alt="imagen de una carta generada" id="Card-Img">
+          <!-- content -->
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
