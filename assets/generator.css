@@ -1,0 +1,74 @@
+main{
+  margin-left: 24px;
+  margin-top: 24px;
+}
+
+#Card-Img {
+  transform: scaleX(-1);
+}
+#btn-click {
+  left: 126px;
+  margin-top: 160px;
+}
+
+.background-Game{
+  margin-left: 6px;
+  margin-top: 2px;
+}
+
+.press-start{
+  margin-top: 224px;
+  margin-left: 125px;
+  line-height: 1;
+}
+
+/* gradient border */
+
+    .container {
+      margin: auto;
+      width: 40vw;
+      height: 40vh;
+      /*outline: 1px solid red;*/
+      border: 4px solid transparent;
+      border-radius: 4px;
+      box-sizing: border-box;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .demo {
+      /*background-image:
+        linear-gradient(white, white),
+        linear-gradient(180deg, cornflowerblue, purple);*/
+
+      background-image:
+        linear-gradient(black, black),
+        linear-gradient(270deg, #00D7B9, #B95DD7 50%, #FFB367 100%);
+
+      background-repeat: no-repeat;
+      background-origin: padding-box, border-box;
+      text-align: center;
+
+      border-radius: 4px;
+    }
+
+    .animated {
+      background-image:
+        linear-gradient(black, black),
+        linear-gradient(180deg, red, grey 50%, white);
+      background-repeat: no-repeat;
+      background-size: 100% 100%, 100% 200%;
+      background-position: 0 0, 0 100%;
+      background-origin: padding-box, border-box;
+      animation: highlight 3s infinite alternate;
+    }
+
+    @keyframes highlight {
+      100% {
+        background-position: 0 0, 0 0;
+      }
+    }
+
+
