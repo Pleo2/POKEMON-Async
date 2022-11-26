@@ -1,62 +1,116 @@
 <!-- "npx tailwindcss init" para iniciar tailwind -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png">
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png"
+    />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/plublic/pokeimgUrl-Large.js"></script>
-  <script src="assets/plublic/pokeimgUrl-Small.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/plublic/pokeimgUrl-Large.js"></script>
+    <script src="assets/plublic/pokeimgUrl-Small.js"></script>
 
-  <script defer type="module" src="assets/generator.js"></script>
+    <script defer type="module" src="assets/generator.js"></script>
 
-  <link rel="stylesheet" href="./assets/generator.css">
-  <title>Generator cards</title>
-</head>
-<body class=" bg-black">
-  <div class="relative bg-black overflow-hidden ">
-    <div class="max-w-7xl mx-auto ">
-      <header class="relative z-10 pb-8 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16">
-        <div>
-          <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-            <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl ">
-              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                <div class="flex items-center justify-between w-full md:w-auto">
-                  <a href="./index.html">
-                    <span class="sr-only">mmmm</span>
-                    <img class="h-8 w-auto sm:h-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png">
-                  </a>
+    <link rel="stylesheet" href="./assets/generator.css" />
+    <title>Generator cards</title>
+  </head>
+  <body class="bg-black">
+    <div class="relative bg-black overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <header
+          class="relative z-10 pb-8 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16"
+        >
+          <div>
+            <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+              <nav
+                class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl"
+              >
+                <div
+                  class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0"
+                >
+                  <div
+                    class="flex items-center justify-between w-full md:w-auto"
+                  >
+                    <a href="./index.html">
+                      <span class="sr-only">mmmm</span>
+                      <img
+                        class="h-8 w-auto sm:h-10"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png"
+                      />
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
-                <a href="#" class="font-medium text-gray-200 hover:text-gray-500">Card generator</a>
-                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Projects</a>
-                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Contact</a>
-              </div>
-            </nav>
+                <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
+                  <a
+                    href="#"
+                    class="font-medium text-gray-200 hover:text-gray-500"
+                    >Card generator</a
+                  >
+                  <a
+                    href="#"
+                    class="font-medium text-gray-500 hover:text-gray-200"
+                    >Projects</a
+                  >
+                  <a
+                    href="#"
+                    class="font-medium text-gray-500 hover:text-gray-200"
+                    >Contact</a
+                  >
+                </div>
+              </nav>
+            </div>
           </div>
-        </div>
-      </header>
-      <section class="w-48 h-64 container demo animated mt-12" id="box">
-        <h2 class=" font-sans font-black text-gray-200 text-8xl animate-bounce motion-reduce:">?</h2>
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de4b3e6a-73cd-44c4-a7e0-fc36afcadcb9/deri8tc-ae96762e-7325-4d77-87d3-28620add92f6.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlNGIzZTZhLTczY2QtNDRjNC1hN2UwLWZjMzZhZmNhZGNiOVwvZGVyaTh0Yy1hZTk2NzYyZS03MzI1LTRkNzctODdkMy0yODYyMGFkZDkyZjYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.p3K2JKVPBrM76GJJJQuLl28e2CU5VO_foiHx2hRhvj0" alt="" class="w-1/4 mx-auto ">
-      </section>
-      <main class=" h-full w-72 bg-black flex flex-row">
-        <div class="relative flex flex-col gap-10 justify-center justify-items-center w-96  rounded-" id="content">
-          <button class="absolute self-center h-10 w-24 text-black font-mono font-black text-xl animate-pulse hover:scale-110 transition-transform duration-300" id="btn-click">Start</button>
-          <img src="./assets/plublic/pngwing-Squous.com.png" alt="pokedex" class="w-full ">
-          <img src="https://opengameart.org/sites/default/files/anim_01.gif" alt="" class="absolute left-28 w-28 h-24 top-10 background-Game">
-          <img src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif" alt="imagen de una carta generada" id="Card-Img" class="absolute w-16 top-24 left-32 mt-2 mx-auto">
-          <!-- content -->
-          <div><h2 class="press-start absolute top-0 z-10 w-28 text-gray-500 font-mono font-black text-sm drop-shadow-2xl" style=" margin-top: 224px; margin-left: 125px; line-height: 1;">Press Start to Generate</h2></div>
-        </div>
-      </main>
-      
+        </header>
+        <section class="w-48 h-64 container demo animated mt-4" id="box">
+          <h2
+            class="font-sans font-black text-gray-200 text-8xl animate-bounce motion-reduce:"
+          >
+            ?
+          </h2>
+          <img src="" alt="" class="absolute w-40 " id="Special-Card" />
+        </section>
+        <main class="h-full w-72 bg-black flex flex-row">
+          <div
+            class="relative flex flex-col gap-10 justify-center justify-items-center w-96 rounded-"
+            id="content"
+          >
+            <button class="absolute self-center h-10 w-24 text-white font-mono font-black text-xl z-20" id="btn">Start</button>
+          
+            <img
+              src="./assets/plublic/pngwing-Squous.com.png"
+              alt="pokedex"
+              class="w-full opacity-60"
+            />
+            <img
+              src="https://opengameart.org/sites/default/files/anim_01.gif"
+              alt=""
+              class="absolute left-28 w-28 h-24 top-10 grayscale background-Game"
+            />
+            <img
+              src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"
+              alt="imagen de una carta generada"
+              id="Card-Img"
+              class="grayscale absolute w-16 top-24 left-32 mt-2 mx-auto"
+            />
+            <!-- content -->
+            <div>
+              <h2
+                class="press-start absolute top-0 z-10 w-28 text-gray-700 font-mono font-black text-sm drop-shadow-2xl"
+                style="margin-top: 224px; margin-left: 125px; line-height: 1"
+              >
+                Press Start to Generate
+              </h2>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

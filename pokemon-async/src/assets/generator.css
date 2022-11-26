@@ -6,7 +6,7 @@ main{
 #Card-Img {
   transform: scaleX(-1);
 }
-#btn-click {
+#btn {
   left: 126px;
   margin-top: 160px;
 }
