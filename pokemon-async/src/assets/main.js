@@ -1,4 +1,4 @@
-const API =
+const APIyoutube =
   "https://youtube-v31.p.rapidapi.com/search?channelId=UCcqvmc1uRblenC_-z2pizfA&part=snippet%2Cid&order=date&maxResults=9";
 
   
@@ -22,7 +22,7 @@ async function fetchData(urlApi) {
 
 (async () => {
   try {
-    const videos = await fetchData(API);
+    const videos = await fetchData(APIyoutube);
     let view = `
     ${videos.items.map(video => `
       <div class="group relative">

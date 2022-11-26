@@ -13,10 +13,7 @@
     />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/plublic/pokeimgUrl-Large.js"></script>
-    <script src="assets/plublic/pokeimgUrl-Small.js"></script>
-
-    <script defer type="module" src="assets/generator.js"></script>
+    <script defer src="assets/generator.js"></script>
 
     <link rel="stylesheet" href="./assets/generator.css" />
     <title>Generator cards</title>
@@ -25,7 +22,7 @@
     <div class="relative bg-black overflow-hidden">
       <div class="max-w-7xl mx-auto">
         <header
-          class="relative z-10 pb-8 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16"
+          class="relative z-10 pb-6 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16"
         >
           <div>
             <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
@@ -51,7 +48,7 @@
                   <a
                     href="#"
                     class="font-medium text-gray-200 hover:text-gray-500"
-                    >Card generator</a
+                    >Card Generator</a
                   >
                   <a
                     href="#"
@@ -68,44 +65,51 @@
             </div>
           </div>
         </header>
-        <section class="w-48 h-64 container demo animated mt-4" id="box">
+        <h1 class="cursor-pointer text-center font-sans font-black text-gray-400 md:text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
+          <span class="block text-5xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">ASYNC</span>
+          <span class="block  text-3xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Generator</span>
+        </h1>
+        <section class="w-48 h-64 container demo animated mt-8" id="box">
           <h2
-            class="font-sans font-black text-gray-200 text-8xl animate-bounce motion-reduce:"
+            class="font-sans font-black text-gray-400 text-6xl animate-bounce"
+            style="animation-duration: 2s ;"
           >
             ?
           </h2>
-          <img src="" alt="" class="absolute w-40 " id="Special-Card" />
+          <img src="" alt="" class="absolute w-40" id="Special-Card" />
         </section>
         <main class="h-full w-72 bg-black flex flex-row">
           <div
             class="relative flex flex-col gap-10 justify-center justify-items-center w-96 rounded-"
             id="content"
           >
-            <button class="absolute self-center h-10 w-24 text-white font-mono font-black text-xl z-20" id="btn">Start</button>
-          
+            <button
+              class="absolute self-center px-2 h-max w-max text-black font-mono font-black text-sm z-20 border-gray-700 opacity-95 border-opacity-75 container demo animated2 active:scale-110 duration-300"
+              id="btn"
+              style="border-width: 2px;"
+            >
+            <span class="start-text hover:text-red-800">
+              Start
+            </span>
+            </button>
+
             <img
               src="./assets/plublic/pngwing-Squous.com.png"
               alt="pokedex"
-              class="w-full opacity-60"
+              class="w-full opacity-60 grayscale"
             />
             <img
-              src="https://opengameart.org/sites/default/files/anim_01.gif"
+              src="./assets/plublic/pokemon-ditto.gif"
               alt=""
-              class="absolute left-28 w-28 h-24 top-10 grayscale background-Game"
-            />
-            <img
-              src="https://weichiachang.github.io/pokemon-master/img/loading.45600eb9.gif"
-              alt="imagen de una carta generada"
-              id="Card-Img"
-              class="grayscale absolute w-16 top-24 left-32 mt-2 mx-auto"
+              class="absolute  grayscale background-Game opacity-60 ditto"
             />
             <!-- content -->
             <div>
               <h2
-                class="press-start absolute top-0 z-10 w-28 text-gray-700 font-mono font-black text-sm drop-shadow-2xl"
-                style="margin-top: 224px; margin-left: 125px; line-height: 1"
+                class="press-start absolute top-0 z-10 w-20 text-gray-700 font-mono font-black text-xs drop-shadow-2xl opacity-75"
+                style="margin-top: 224px; margin-left: 133px; line-height: 1"
               >
-                Press Start to Generate
+                Press <span class="text-red-900">Start</span> to Generate
               </h2>
             </div>
           </div>
