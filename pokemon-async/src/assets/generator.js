@@ -30,7 +30,6 @@ const getCache = () => {
         localStorage.setItem("data", stringData);
         // JSON.parse(localStorage.getItem("data"));
         cache = JSON.parse(localStorage.data);
-        console.log(cache);
         return
 
       } else {
@@ -43,6 +42,7 @@ const getCache = () => {
     }
   })();
 };
+
 getCache();
 
 const btn = null || document.querySelector("#btn");
