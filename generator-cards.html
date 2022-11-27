@@ -1,120 +1,200 @@
 <!-- "npx tailwindcss init" para iniciar tailwind -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="assets/generator.js"></script>
+  <link rel="icon" type="image/png"
+    href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png" />
 
-    <link rel="stylesheet" href="./assets/generator.css" />
-    <title>Generator cards</title>
-  </head>
-  <body class="bg-black">
-    <div class="relative bg-black overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <header
-          class="relative z-10 pb-6 sm:pb-8 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16"
-        >
-          <div>
-            <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-              <nav
-                class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl"
-              >
-                <div
-                  class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0"
-                >
-                  <div
-                    class="flex items-center justify-between w-full md:w-auto"
-                  >
-                    <a href="./index.html">
-                      <span class="sr-only">mmmm</span>
-                      <img
-                        class="h-8 w-auto sm:h-10"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png"
-                      />
-                    </a>
-                  </div>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="assets/generator.js"></script>
+
+  <link rel="stylesheet" href="./assets/generator.css" />
+  <title>Generator cards</title>
+</head>
+
+<body class="bg-black">
+  <div class="relative bg-black overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <header class="relative z-10 sm:pb-6 md:pb-8 lg:max-w-2xl lg:w-full lg:pb-16 xl:pb-16">
+        <div>
+          <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+            <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl">
+              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                  <a href="./index.html">
+                    <span class="sr-only">mmmm</span>
+                    <img class="h-8 w-auto sm:h-10"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png" />
+                  </a>
                 </div>
-                <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
-                  <a
-                    href="#"
-                    class="font-medium text-gray-200 hover:text-gray-500"
-                    >Card Generator</a
-                  >
-                  <a
-                    href="#"
-                    class="font-medium text-gray-500 hover:text-gray-200"
-                    >Projects</a
-                  >
-                  <a
-                    href="#"
-                    class="font-medium text-gray-500 hover:text-gray-200"
-                    >Contact</a
-                  >
-                </div>
-              </nav>
-            </div>
+              </div>
+              <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
+                <a href="#" class="font-medium text-gray-200 hover:text-gray-500">Card Generator</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Projects</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Contact</a>
+              </div>
+            </nav>
           </div>
-        </header>
-        <h1 class="cursor-pointer text-center font-sans font-black text-gray-400 md:text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
-          <span class="block text-5xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">ASYNC</span>
-          <span class="block  text-3xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Generator</span>
+        </div>
+      </header>
+
+
+      <main class="relative h-full w-80 flex-col justify-center justify-items-center mx-auto mt-8">
+        <!-- title -->
+        <h1
+          class="cursor-pointer text-center font-sans font-black text-gray-400 md:text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
+          <span class="block text-4xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">ASYNC</span>
+          <span
+            class="block text-2xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Generator</span>
+          <span class="text-gray-600">( 非同期発生器 )</span>
         </h1>
         <section class="w-48 h-64 container demo animated mt-8" id="box">
-          <h2
-            class="font-sans font-black text-gray-400 text-6xl animate-bounce"
-            style="animation-duration: 2s ;"
-          >
+          <h2 class="font-sans font-black text-gray-400 text-6xl animate-bounce" style="animation-duration: 2s">
             ?
           </h2>
           <img src="" alt="" class="absolute w-40" id="Special-Card" />
         </section>
-        <main class="h-full w-72 bg-black flex flex-row">
-          <div
-            class="relative flex flex-col gap-10 justify-center justify-items-center w-96 rounded-"
-            id="content"
-          >
-            <button
-              class="absolute self-center px-2 h-max w-max text-black font-mono font-black text-sm z-20 border-gray-700 opacity-95 border-opacity-75 container demo animated2 active:scale-110 duration-300"
-              id="btn"
-              style="border-width: 2px;"
-            >
-            <span class="start-text hover:text-red-800">
-              Start
-            </span>
-            </button>
 
-            <img
-              src="./assets/plublic/pngwing-Squous.com.png"
-              alt="pokedex"
-              class="w-full opacity-60 grayscale"
-            />
-            <img
-              src="./assets/plublic/pokemon-ditto.gif"
-              alt=""
-              class="absolute  grayscale background-Game opacity-60 ditto"
-            />
-            <!-- content -->
-            <div>
-              <h2
-                class="press-start absolute top-0 z-10 w-20 text-gray-700 font-mono font-black text-xs drop-shadow-2xl opacity-75"
-                style="margin-top: 224px; margin-left: 133px; line-height: 1"
-              >
-                Press <span class="text-red-900">Start</span> to Generate
-              </h2>
-            </div>
-          </div>
-        </main>
-      </div>
+        <div class="w-full flex justify-center mt-4">
+          <button
+            class="text-white font-mono font-black opacity-75 animate container animated w-48 h-max pt-1 inline ">add
+            favorite <span>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/220px-Heart_coraz%C3%B3n.svg.png"
+                alt="" class="w-4 inline">
+            </span>
+          </button>
+        </div>
+
+        <p class="press-start mt-8 mx-auto z-10 w-52 text-white font-mono font-black text-xl text-center drop-shadow-2xl opacity-75"
+          <span class="text-red-900">Press Start</span>
+          to Generate
+          <span>
+            <img src="" alt="">
+          </span>
+        </p>
+
+        <div class="w-full flex justify-center mt-4">
+          <img
+            src="https://ouch-cdn2.icons8.com/L2K1QdEtUkLfbnXiHaNLuMuOVoB09NrOWiC-7AlDNYk/rs:fit:256:252/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNjgw/L2Q0MWY3ZTZiLTU0/MTctNDQ1ZC1hMDE2/LTAzNzk0YTZmZTY4/ZS5zdmc.png"
+            alt="" class="brightness-150 w-5 rotate opacity-75">
+        </div>
+
+        <div class="container animated w-max h-max px-2 pt-1 mt-6">
+          <button
+            class="h-max w-max text-white font-mono font-black text-3xl z-20 opacity-80 active:scale-110 duration-300"
+            id="btn">
+            <span class="start-text hover:text-red-600"> Start </span>
+          </button>
+        </div>
+
+      </main>
     </div>
-  </body>
+  </div>
+
+  <hr class="mt-16 text-gray-400 opacity-75" size="1px">
+  
+  <!-- favorite Cards -->
+  <section
+    class="favorite-Cards mx-auto mt-8 w-72 h-auto flex flex-col gap-8">
+    <!-- title  -->
+    <h2
+      class="cursor-pointer text-center font-sans font-black text-gray-400 md:text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
+      <span class="block text-2xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">Favorite</span>
+      <span
+        class="block text-xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Cards</span>
+      <span class="text-gray-600">( お気に入りのカード )</span>
+    </h2>
+
+    <article class="w-max mx-auto">
+      <img 
+      src="https://images.pokemontcg.io/xy2/2.png" 
+      alt="" 
+      class="w-40 pb-2 mx-auto" />
+      
+      <div class="w-full flex justify-center mt-4">
+        <button
+          class="text-white font-mono font-black opacity-75 animate container animated w-48 h-max pt-1 inline ">delete
+          card <span>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3143/3143497.png"
+              alt="" class="w-4 inline">
+          </span>
+        </button>
+      </div>
+    </article>
+    <article class="w-max mx-auto">
+      <img 
+      src="https://images.pokemontcg.io/xy2/2.png" 
+      alt="" 
+      class="w-40 pb-2 mx-auto" />
+      
+      <div class="w-full flex justify-center mt-4">
+        <button
+          class="text-white font-mono font-black opacity-75 animate container animated w-48 h-max pt-1 inline ">delete
+          card <span>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3143/3143497.png"
+              alt="" class="w-4 inline">
+          </span>
+        </button>
+      </div>
+    </article>
+    <article class="w-max mx-auto">
+      <img 
+      src="https://images.pokemontcg.io/xy2/2.png" 
+      alt="" 
+      class="w-40 pb-2 mx-auto" />
+      
+      <div class="w-full flex justify-center mt-4">
+        <button
+          class="text-white font-mono font-black opacity-75 animate container animated w-48 h-max pt-1 inline ">delete
+          card <span>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3143/3143497.png"
+              alt="" class="w-4 inline">
+          </span>
+        </button>
+      </div>
+    </article>
+    <article class="w-max mx-auto">
+      <img 
+      src="https://images.pokemontcg.io/xy2/2.png" 
+      alt="" 
+      class="w-40 pb-2 mx-auto" />
+      
+      <div class="w-full flex justify-center mt-4">
+        <button
+          class="text-white font-mono font-black opacity-75 animate container animated w-48 h-max pt-1 inline ">delete
+          card <span>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3143/3143497.png"
+              alt="" class="w-4 inline">
+          </span>
+        </button>
+      </div>
+    </article>
+
+  </section>
+</body>
+
 </html>
+
+
+
+
+
+<!-- 
+  * pokedex con meme de ditto easter-egg
+
+  <div class="relative flex justify-center justify-items-center w-72" id="content">
+  <img src="./assets/plublic/pngwing-Squous.com.png" alt="pokedex" class="w-full opacity-60 grayscale" />
+  <img src="./assets/plublic/pokemon-ditto.gif" alt=""
+    class="absolute grayscale background-Game opacity-60 ditto" />
+
+</div> -->

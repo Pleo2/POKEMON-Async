@@ -6,7 +6,7 @@ const APIyoutube =
     method: "GET",
     headers: {
       "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
-      "X-RapidAPI-Key": "c68edbdba9mshc3cb6eb8038f3b2p1f444ajsna5de19fe1256",
+      "X-RapidAPI-Key": "bfa734cd8emsh6bd35a5af181555p1d441ajsnd13d8ac0acbe",
     },
   };
 
