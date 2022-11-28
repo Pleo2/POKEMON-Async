@@ -30,12 +30,11 @@ const getCache = () => {
         localStorage.setItem("data", stringData);
         // JSON.parse(localStorage.getItem("data"));
         cache = JSON.parse(localStorage.data);
-
-        return cache;
+        return
 
       } else {
         cache = JSON.parse(localStorage.data);
-        return cache
+         return cache
 
       }
     } catch (error) {
