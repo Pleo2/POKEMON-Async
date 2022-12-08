@@ -92,8 +92,13 @@ const domListener = () => {
 };
 
 const getFavorites = () => {
-  if (
-    favoriteArray[favoriteArray.length - 1] !== specialCard.src &&
+  if (favoriteArray.length === 0) {
+    favoriteArray.push({
+      img: specialCard.src,
+      id: randomNumber,
+    }); 
+  } else if (
+    favoriteArray[favoriteArray.length - 1].img !== specialCard.src &&
     favoriteArray.length < favoritesLimitNumber
   ) {
     favoriteArray.push({
@@ -133,7 +138,7 @@ const showArticules = (parceUrl) => {
             
             <div class="w-full flex justify-center mt-4">
             <button
-            class="text-white font-mono font-black opacity-75 animate container animated w-48 h-max pt-1 inline botones-Prueba"
+            class="text-white font-mono font-black opacity-75 animate container w-48 h-max pt-1 inline botones-Prueba"
             id="btn-delete${btnNumber++}"
             >delete card 🗑
             </button>
@@ -148,7 +153,6 @@ const showArticules = (parceUrl) => {
             <span class="block text-2xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">Favorite</span>
             <span
             class="block text-xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Cards</span>
-            <span class="text-gray-600">( お気に入りのカード )</span>
             </h2>`;
   content.innerHTML += view;
 };

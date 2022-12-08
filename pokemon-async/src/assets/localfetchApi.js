@@ -1,7 +1,9 @@
 const APICard = "https://api.pokemontcg.io/v2/cards/";
 const optionsCard = {
   method: "GET",
-  apiKey: "e45a77d6-5b1b-465d-a0ae-67038c51e6e8",
+  Headers: {
+    "X-API-KEY" : "e45a77d6-5b1b-465d-a0ae-67038c51e6e8",
+  },
 };
 
 //--------------------------------------------------------//
