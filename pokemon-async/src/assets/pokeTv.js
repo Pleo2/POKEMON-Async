@@ -9,7 +9,7 @@ const RUTA_MOVIE_RECOMMENDATIONS = (id) =>  `/movie/${id}/recommendations?api_ke
 const RUTA_SEARCH = "/search/movie?api_key=";
 const QUERY_SEARCH = `&query=${SEARCH}`;
 
-const RUTA_URL_IMG = "https://image.tmdb.org/t/p/w300/";
+const RUTA_URL_IMG = "https://image.tmdb.org/t/p/w500/";
 // -------------------------------------------------------------------------//
 
 const URL_API_SEARCH = URL_API_TMDB + RUTA_SEARCH + API_KEY_TMDB + QUERY_SEARCH;
