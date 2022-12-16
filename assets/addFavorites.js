@@ -1,6 +1,6 @@
-const favoritesLimitNumber = 6;
+const favoritesLimitNumber = 12;
 let idFavoriteCard;
-let favoriteArray = [];
+let favoriteArray;
 let favoritesString;
 let parceUrl;
 let imgId;
@@ -138,7 +138,7 @@ const showArticules = (parceUrl) => {
             
             <div class="w-full flex justify-center mt-4">
             <button
-            class="text-white font-mono font-black opacity-75 animate container w-48 h-max pt-1 inline botones-Prueba"
+            class="text-gray-300 font-mono font-black text-sm opacity-75 border-2 border-gray-300 rounded-lg w-48 h-max pt-1"
             id="btn-delete${btnNumber++}"
             >delete card 🗑
             </button>
@@ -149,7 +149,7 @@ const showArticules = (parceUrl) => {
             .join("")}
             `;
   content.innerHTML = `<h2
-            class=" mt-8 cursor-pointer text-center font-sans font-black text-gray-400 md:text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
+            class=" mt-32 cursor-pointer text-center font-sans font-black text-gray-400 text-2xl md:text-4xl lg:text-6xl xl:text-8xl transition-colors duration-500 ease-out">
             <span class="block text-2xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">Favorite</span>
             <span
             class="block text-xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Cards</span>

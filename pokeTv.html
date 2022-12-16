@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/png"
+    href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png" />
+
+  <link rel="stylesheet" href="pokeTv.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="assets/localfetchApi.js"></script>
+  <script defer src="assets/nodesPokeTv.js"></script>
+  <script defer src="assets/pokeTv.js"></script>
+  <script defer src="assets/navigation.js"></script>
+  <title>Poke TV</title>
+</head>
+
+<body class="bg-black relative">
+  <div class="relative bg-black overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <header class="relative z-10 lg:max-w-2xl lg:w-full ">
+        <div>
+          <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+            <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start xl:text-xl">
+              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                  <a href="./index.html">
+                    <span class="sr-only"></span>
+                    <img class="h-8 w-auto sm:h-10"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/800px-Pok%C3%A9_Ball_icon.svg.png" />
+                  </a>
+                </div>
+              </div>
+              <div class="space-x-6 block md:ml-10 md:pr-4 md:space-x-8">
+                <a href="./generator-cards.html" class="font-medium text-gray-500 hover:text-gray-200">Card
+                  Generator</a>
+                <a href="./pokeTv.html" class="font-medium text-gray-200 hover:text-gray-500">Poke TV</a>
+                <a href="#" class="font-medium text-gray-500 hover:text-gray-200">Contact</a>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <!-- container tittle  class: to see put flex delete:hidden-->
+  <div class="m-auto mt-8 w-max h-auto text-center font-sans font-black" id="container-title">
+    <h1 class="cursor-pointer text-center font-sans font-black text-gray-400 md
+        :text-8xl lg:text-8xl xl:text-9xl transition-colors duration-500 ease-out">
+      <span
+        class="block text-4xl xl:inline transition-colors duration-500 ease-out md:text-4xl lg:text-6xl xl:text-8xl">POKE</span>
+      <span
+        class="block text-3xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Tv</span>
+    </h1>
+  </div>
+
+  <!-- container portadas  class: to see put flex delete:hidden-->
+  <section class="container--list-movies flex flex-wrap w-3/4 gap-8 m-auto mt-12 pb-8 " id="list-movies">
+  </section>
+
+
+  <main class="relative w-full h-auto mt-16 hidden" id="main-Details">
+
+    <section class="img-portada--main relative" id="img-portada--main">
+      <span id="back-button" class="top-20 left-3 z-10 opacity-80 scale-75 fixed">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
+      </span>
+
+      <div
+        class="absolute border-2 border-gray-300 rounded-lg w-36 h-auto pb-1 bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <a href="" class="watch-movie"><span class="block w-max m-auto text-white font-black text-lg">Whatch Now</span></a>
+      </div>
+    </section>
+
+    <section class="container--main-section relative w-full h-auto">
+      <div class="flex flex-wrap max-w-xs m-auto">
+        <h1 class="font-black text-gray-300 text-3xl text-center w-max m-auto opacity-60" id="tittle-movie-detail">Pokémon Detective Pikachu</h1>
+      </div>
+
+      <section
+        class="container--facts w-max mt-6 font-semibold opacity-60 text-gray-500 flex flex-wrap text-md font-sans m-auto gap-3" id="container-facts">
+        <span class="certification--facts border border-red-600 rounded-lg px-2" id="certification--facts">PG</span>
+        <span class="release--facts" id="release--facts">05/10/2019(US)</span>
+        <span class="runtime--facts" id="runtime--facts">1h:45m</span>
+      </section>
+
+      <div class="w-full h-max m-auto flex justify-center gap-6 mt-4 opacity-60">
+        <div class=" font-sans font-semibold w-max px-4 p-1 inline ">
+          <span class="text-gray-300" id="user-score">User Score</span>
+        </div>
+        <div class=" font-sans font-semibold w-max px-4 p-1">
+          <span class="text-gray-300"><a class="text-red-600"href="" id="trailler-url">Play Trailler</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container--main-section-2 relative w-full h-auto mt-4 ">
+      <article class="w-full h-auto opacity-60">
+        <h2 class="text-white m-auto w-3/4 text-xl font-bold">Overview</h2>
+
+        <p class="text-white w-3/4 m-auto mt-2 text-lg" id="overview-Movie">In a world where people collect pocket-size monsters (Pokémon)
+          to do battle, a boy comes across an intelligent monster who seeks to be a detective.
+        </p>
+
+  <!-- <div class="m-auto w-3/4 mt-4">
+          <ol class="flex flex-wrap justify-start">
+            <li class="w-36 pt-3">
+              <h3 class="text-sm text-white font-bold">Rob Letterman <span class="block font-medium">Director,
+                  Screenplay</span></h3>
+            </li>
+            <li class="w-36 pt-3">
+              <h3 class="text-sm text-white font-bold">Benji Samit <span class="block font-medium">Screenplay,
+                  Story</span></h3>
+            </li>
+            <li class="w-36 pt-3">
+              <h3 class="text-sm text-white font-bold">Dan Hernandez <span class="block font-medium">Screenplay,
+                  Story</span></h3>
+            </li>
+            <li class="w-36 pt-3">
+              <h3 class="text-sm text-white font-bold">Derek Connolly <span class="block font-medium">Screenplay</span>
+              </h3>
+            </li>
+            <li class="w-36 pt-3">
+              <h3 class="text-sm text-white font-bold">Nicole Perlman <span class="block font-medium">Story</span></h3>
+            </li>
+          </ol>
+        </div> -->
+      </article>
+    </section>
+
+    <section class="relative h-auto opacity-60 w-3/4 m-auto mt-4">
+      <h2 class="text-white font-bold text-xl mt-8">Recommendations</h2>
+      <div class="overflow-x-auto flex gap-6 mt-4 pb-4" id="container-recommendations">
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
