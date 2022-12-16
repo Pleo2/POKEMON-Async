@@ -23,3 +23,5 @@ const runtimeFacts = $("runtime--facts");
 const userScore = $("user-score");
 const traillerUrl = $("trailler-url");
 
+const recommendationsContainer = $("container-recommendations")
+

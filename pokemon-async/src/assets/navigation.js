@@ -55,6 +55,11 @@ const detailsPage = () => {
       const youtubeId = dataTrailler.results[0].key;
 
       traillerUrl.href = youtubeUrl + youtubeId;
+
+      const recommendationsAll = await getDataTmdb(URL_API_MOVIE_RECOMMENDATIONS(hashIdMovie));
+      const recommendations = recommendationsAll.results.slice(0,8);
+
+      createPoster(recommendationsContainer, recommendations);
     } catch (error) {
       console.log(error);
     }
@@ -65,6 +70,4 @@ const homePage = () => {
   title.classList.remove("hidden");
   listMovies.classList.remove("hidden");
   mainDetails.classList.add("hidden");
-
-  logoStream.style.backgroundImage = `url("")`
 };

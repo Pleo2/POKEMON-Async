@@ -5,6 +5,7 @@ const API_KEY_TMDB = "2492785d913953d3872744cbd439746e";
 const RUTA_MOVIE_DETAILS = (id) =>  `/movie/${id}?api_key=`;
 const RUTA_MOVIE_TRAILLER = (id) =>  `/movie/${id}/videos?api_key=`;
 const RUTA_MOVIE_WATCH = (id) =>  `/movie/${id}/watch/providers?api_key=`;
+const RUTA_MOVIE_RECOMMENDATIONS = (id) =>  `/movie/${id}/recommendations?api_key=`;
 const RUTA_SEARCH = "/search/movie?api_key=";
 const QUERY_SEARCH = `&query=${SEARCH}`;
 
@@ -15,6 +16,7 @@ const URL_API_SEARCH = URL_API_TMDB + RUTA_SEARCH + API_KEY_TMDB + QUERY_SEARCH;
 const URL_API_MOVIE_DETAILS = (id) =>  URL_API_TMDB + RUTA_MOVIE_DETAILS(id) + API_KEY_TMDB;
 const URL_API_MOVIE_TRAILLERS = (id) =>  URL_API_TMDB + RUTA_MOVIE_TRAILLER(id) + API_KEY_TMDB;
 const URL_API_MOVIE_WATCH = (id) =>  URL_API_TMDB + RUTA_MOVIE_WATCH(id) + API_KEY_TMDB;
+const URL_API_MOVIE_RECOMMENDATIONS = (id) =>  URL_API_TMDB + RUTA_MOVIE_RECOMMENDATIONS(id) + API_KEY_TMDB;
 
 const fetchDataMovies = async (urlApi) => {
   const response = await fetch(urlApi);
@@ -28,6 +30,7 @@ const getDataTmdb = async (urlApi) => {
 };
 
 const createPoster = (container, movies) => {
+  container.innerHTML = "";
   movies.forEach((element) => {
     const imgPoster = document.createElement("img");
     
