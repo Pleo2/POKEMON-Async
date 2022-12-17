@@ -5,4 +5,5 @@ const content = null || document.querySelector(".favorite-Cards");
 
 const btnSelect = (number) => document.getElementById(`btn-delete${number}`);
 
-const botonesPrueba = () => document.getElementsByClassName("botones-Prueba");
+const btnStart = null || document.getElementById("start-button");
+const loadingSpinner = null || document.getElementById("loading-spinner");

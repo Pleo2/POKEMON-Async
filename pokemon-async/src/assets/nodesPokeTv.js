@@ -12,8 +12,8 @@ const logoStream = $("logo-stream");
 
 const watchMovie = document.querySelector(".watch-movie")
 
-const titleMovie = $("tittle-movie-detail");
-const overviewMovie = $("overview-Movie");
+const containerTitle = $("container-title-movie");
+const containerOverview = $("container-overview");
 
 const containerFacts = $("container--facts");
 const certificationFacts = $("certification--facts");

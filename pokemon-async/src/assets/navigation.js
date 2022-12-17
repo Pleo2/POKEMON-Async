@@ -35,12 +35,45 @@ const detailsPage = () => {
   (async () => {
     try {
       const detailsMovie = await getDataTmdb(URL_API_MOVIE_DETAILS(hashIdMovie));
+      
       imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG}${detailsMovie.poster_path})`;
       const watchNowMovie = await getDataTmdb(URL_API_MOVIE_WATCH(hashIdMovie));  
       watchMovie.href = watchNowMovie.results.US.link;
 
-      titleMovie.textContent = detailsMovie.title;
+      // font-black text-gray-300 text-3xl text-center w-max m-auto opacity-60
+      containerTitle.innerHTML = "";
+      
+      const titleMovie = document.createElement("h1");
+      titleMovie.classList.add("font-black");
+      titleMovie.classList.add("text-gray-300");
+      titleMovie.classList.add("text-3xl");
+      titleMovie.classList.add("text-center");
+      titleMovie.classList.add("w-max");
+      titleMovie.classList.add("m-auto");
+      titleMovie.classList.add("opacity-60");
+      titleMovie.textContent = detailsMovie.title
+      containerTitle.appendChild(titleMovie);
+      
+      containerOverview.innerHTML = "";
+
+      const overviewTitle = document.createElement("h2");
+      overviewTitle.textContent = "Overview"
+      overviewTitle.classList.add("text-white");
+      overviewTitle.classList.add("m-auto");
+      overviewTitle.classList.add("w-3/4");
+      overviewTitle.classList.add("text-xl");
+      overviewTitle.classList.add("font-bold");
+
+      const overviewMovie = document.createElement("p");
       overviewMovie.textContent = detailsMovie.overview;
+      overviewMovie.classList.add("text-white");
+      overviewMovie.classList.add("w-3/4");
+      overviewMovie.classList.add("m-auto");
+      overviewMovie.classList.add("mt-2");
+      overviewMovie.classList.add("text-lg");
+
+      containerOverview.appendChild(overviewTitle);
+      containerOverview.appendChild(overviewMovie);
 
       certificationFacts.textContent = "PG";
       releaseFacts.textContent = detailsMovie.release_date;

@@ -61,6 +61,18 @@
 
   <!-- container portadas  class: to see put flex delete:hidden-->
   <section class="container--list-movies flex flex-wrap w-3/4 gap-8 m-auto mt-12 pb-8 " id="list-movies">
+    <div class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+    </div>
+    <div class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+    </div>
+    <div class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+    </div>
+    <div class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+    </div>
+    <div class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+    </div>
+    <div class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+    </div>
   </section>
 
 
@@ -68,74 +80,84 @@
 
     <section class="img-portada--main relative" id="img-portada--main">
       <span id="back-button" class="top-20 left-3 z-10 opacity-80 scale-75 fixed">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48">
+          <path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z" />
+        </svg>
       </span>
 
       <div
         class="absolute border-2 border-gray-300 rounded-lg w-36 h-auto pb-1 bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <a href="" class="watch-movie"><span class="block w-max m-auto text-white font-black text-lg">Whatch Now</span></a>
+        <a href="" class="watch-movie"><span class="block w-max m-auto text-white font-black text-lg">Whatch
+            Now</span></a>
       </div>
     </section>
 
     <section class="container--main-section relative w-full h-auto">
-      <div class="flex flex-wrap max-w-xs m-auto">
-        <h1 class="font-black text-gray-300 text-3xl text-center w-max m-auto opacity-60" id="tittle-movie-detail">Pokémon Detective Pikachu</h1>
+      <div class="flex flex-wrap max-w-xs m-auto" id="container-title-movie">
+        <div
+          class="movie-container movie-container--loading w-full h-6 rounded-md cursor-pointer bg-gray-700 opacity-60">
+        </div>
       </div>
 
       <section
-        class="container--facts w-max mt-6 font-semibold opacity-60 text-gray-500 flex flex-wrap text-md font-sans m-auto gap-3" id="container-facts">
+        class="container--facts w-max mt-6 font-semibold opacity-60 text-gray-500 flex flex-wrap text-md font-sans m-auto gap-3"
+        id="container-facts">
         <span class="certification--facts border border-red-600 rounded-lg px-2" id="certification--facts">PG</span>
-        <span class="release--facts" id="release--facts">05/10/2019(US)</span>
-        <span class="runtime--facts" id="runtime--facts">1h:45m</span>
+        <span class="release--facts" id="release--facts">--/--/----</span>
+        <span class="runtime--facts" id="runtime--facts">-h:--m</span>
       </section>
 
       <div class="w-full h-max m-auto flex justify-center gap-6 mt-4 opacity-60">
         <div class=" font-sans font-semibold w-max px-4 p-1 inline ">
-          <span class="text-gray-300" id="user-score">User Score</span>
+          <span class="text-gray-300" id="user-score">User Score:--</span>
         </div>
         <div class=" font-sans font-semibold w-max px-4 p-1">
-          <span class="text-gray-300"><a class="text-red-600"href="" id="trailler-url">Play Trailler</a></span>
+          <span class="text-gray-300"><a class="text-red-600" href="" id="trailler-url">Play Trailler</a></span>
         </div>
       </div>
     </section>
 
     <section class="container--main-section-2 relative w-full h-auto mt-4 ">
-      <article class="w-full h-auto opacity-60">
-        <h2 class="text-white m-auto w-3/4 text-xl font-bold">Overview</h2>
+      <article class="w-full h-auto opacity-60" id="container-overview">
+        <div class="movie-container movie-container--loading w-3/4 h-4 m-auto rounded-md cursor-pointer bg-gray-700 opacity-60">
+        </div>
 
-        <p class="text-white w-3/4 m-auto mt-2 text-lg" id="overview-Movie">In a world where people collect pocket-size monsters (Pokémon)
-          to do battle, a boy comes across an intelligent monster who seeks to be a detective.
-        </p>
-
-  <!-- <div class="m-auto w-3/4 mt-4">
-          <ol class="flex flex-wrap justify-start">
-            <li class="w-36 pt-3">
-              <h3 class="text-sm text-white font-bold">Rob Letterman <span class="block font-medium">Director,
-                  Screenplay</span></h3>
-            </li>
-            <li class="w-36 pt-3">
-              <h3 class="text-sm text-white font-bold">Benji Samit <span class="block font-medium">Screenplay,
-                  Story</span></h3>
-            </li>
-            <li class="w-36 pt-3">
-              <h3 class="text-sm text-white font-bold">Dan Hernandez <span class="block font-medium">Screenplay,
-                  Story</span></h3>
-            </li>
-            <li class="w-36 pt-3">
-              <h3 class="text-sm text-white font-bold">Derek Connolly <span class="block font-medium">Screenplay</span>
-              </h3>
-            </li>
-            <li class="w-36 pt-3">
-              <h3 class="text-sm text-white font-bold">Nicole Perlman <span class="block font-medium">Story</span></h3>
-            </li>
-          </ol>
-        </div> -->
+        <div
+          class="movie-container movie-container--loading w-2/3 mt-4 m-auto h-2 rounded-md cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-2/3 mt-2 m-auto h-2 rounded-md cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-2/3 mt-2 m-auto h-2 rounded-md cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-2/3 mt-2 m-auto h-2 rounded-md cursor-pointer bg-gray-700 opacity-60">
+        </div>
       </article>
     </section>
 
     <section class="relative h-auto opacity-60 w-3/4 m-auto mt-4">
       <h2 class="text-white font-bold text-xl mt-8">Recommendations</h2>
       <div class="overflow-x-auto flex gap-6 mt-4 pb-4" id="container-recommendations">
+        <div
+          class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+        </div>
+        <div
+          class="movie-container movie-container--loading w-32 h-48 rounded-lg cursor-pointer bg-gray-700 opacity-60">
+        </div>
       </div>
     </section>
 
@@ -145,7 +167,8 @@
       class="max-w-7xl mx-auto gap-x-2 pb-0  py-8 px-4 sm:px-6 lg:py-12 lg:px-8 lg:flex lg:items-center lg:justify-center">
 
       <div class="mt-0 flex justify-center justify-items-center md:ml-16 lg:mt-0 lg:flex-shrink-0 cursor-pointer">
-        <a href="https://github.com/Pleo2"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="github"
+        <a href="https://github.com/Pleo2"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="github"
             class="cover h-9 w-9 mt-1 mr-2 brightness-200">
         </a>
 
@@ -159,7 +182,7 @@
         </a>
       </div>
     </div>
-</div>
+  </div>
 </body>
 
 </html>

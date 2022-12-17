@@ -30,10 +30,11 @@ const getCache = () => {
         let dataData = data.data;
         const stringData = JSON.stringify(dataData);
         localStorage.setItem("data", stringData);
-        // JSON.parse(localStorage.getItem("data"));
         cache = JSON.parse(localStorage.data);
+        btnStart.classList.remove("hidden");
+        loadingSpinner.classList.add("hidden")
         return
-
+        
       } else {
         cache = JSON.parse(localStorage.data);
          return cache
@@ -45,4 +46,16 @@ const getCache = () => {
   })();
 };
 
+const showBtn = () => {
+  const btnStart = null || document.getElementById("start-button");
+  const loadingSpinner = null || document.getElementById("loading-spinner");  
+  if(localStorage.data) {
+    btnStart.classList.remove("hidden");
+    loadingSpinner.classList.add("hidden")
+    return 
+  }
+  return
+}
+
 getCache();
+showBtn();

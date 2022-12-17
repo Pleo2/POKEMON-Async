@@ -11,6 +11,13 @@ let articleParent = () => event.target.parentNode.parentNode;
 document.addEventListener("DOMContentLoaded", () => {
   favoriteArray = JSON.parse(localStorage.getItem("Favorites")) || [];
   domListener();
+  if(localStorage.Favorites) {
+    const arrowDown = null || document.getElementById("container-arrow-down");
+
+    arrowDown.innerHTML = ` <span id="down-arrows-button" class="opacity-20 scale-50 animate-ping" style="animation-duration: 2s">
+    <svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
+    </span>`
+  }
 });
 
 const domListener = () => {
@@ -165,6 +172,11 @@ const runfavoriteBtn = () => {
     parceUrl = getArticules();
     showArticules(parceUrl);
     domListener();
+    const arrowDown = null || document.getElementById("container-arrow-down");
+
+    arrowDown.innerHTML = ` <span id="down-arrows-button" class="opacity-20 scale-50 animate-ping" style="animation-duration: 2s">
+    <svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
+    </span>`
   }
 };
 
