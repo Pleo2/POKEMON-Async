@@ -70,3 +70,18 @@
     opacity: 60%
   }
 }
+
+/*
+* transition img 
+ */
+
+
+.before-lazyLoading {
+  opacity: 0;
+  scale: 0.9;
+  transition: opacity ease-in-out 0.45s , scale ease-in-out 0.45s;
+}
+.img-lazyTransition {
+  opacity: 1;
+  scale: 1;
+}

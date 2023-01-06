@@ -21,6 +21,7 @@ const showCard = () => {
 const generateCard = () => {
   getCard();
   showCard();
+  specialCard.classList.add("img-lazyTransition");
 };
 
 btn.onclick = generateCard;

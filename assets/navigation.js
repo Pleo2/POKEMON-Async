@@ -35,7 +35,6 @@ const detailsPage = () => {
   (async () => {
     try {
       const detailsMovie = await getDataTmdb(URL_API_MOVIE_DETAILS(hashIdMovie));
-      
       imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG}${detailsMovie.poster_path})`;
       const watchNowMovie = await getDataTmdb(URL_API_MOVIE_WATCH(hashIdMovie));  
       watchMovie.href = watchNowMovie.results.US.link;

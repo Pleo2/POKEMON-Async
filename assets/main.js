@@ -10,6 +10,8 @@ const APIyoutube =
     },
   };
 
+const YOUTUBE_RUTA = "https://www.youtube.com/watch?v=";
+
 //----------------------------------------------------------------------------------------------------------------------------//  
 
 const content = null || document.getElementById("content");
@@ -22,31 +24,69 @@ async function fetchData(urlApi) {
 
 (async () => {
   try {
-    const videos = await fetchData(APIyoutube);
-    let view = `
-    ${videos.items.map(video => `
-      <div class="group relative">
-        <a href="https://www.youtube.com/watch?v=${video.id.videoId}">
-        <div
-          class="w-full bg-black aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-          <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">
-        </div>
-        <div class=" mt-0 flex justify-between">
-          <h3 class="text-sm text-gray-500">
-            <span aria-hidden="true" class="absolute inset-0"></span>
-            ${video.snippet.title}
-          </h3>
-        </div>
-        </a>
-      </div>
-    `
-      )
-      .slice(0, 8)
-      .join("")}
-    `;
-    content.innerHTML = view;
-
+    const videosData = await fetchData(APIyoutube);
+    const videos = videosData.items;
+    createImgYoutube(content, videos);
   } catch (error) {
     console.log(error)
   }
 })();
+
+const createImgYoutube = (container, videos) => {
+  container.innerHTML = ""
+  videos.forEach(element => {
+    const divContenedor = document.createElement("div");
+    divContenedor.classList.add("group","relative");
+
+    const linkVideo = document.createElement("a");
+    linkVideo.href = YOUTUBE_RUTA + element.id.videoId;
+
+    const divContainerImgVideo = document.createElement("div");
+    divContainerImgVideo.classList.add("w-full", "bg-black", "aspect-w-1", "aspect-h-1", "rounded-md", "overflow-hidden", "group-hover:opacity-75", "lg:aspect-none");
+    
+    const imgVideo = document.createElement("img");
+    imgVideo.setAttribute("data-src", element.snippet.thumbnails.medium.url);
+    imgVideo.alt = element.snippet.title;
+    imgVideo.classList.add("w-full", "before-lazyLoading");
+
+    const containerTitle = document.createElement("div");
+    containerTitle.classList.add("mt-0", "flex", "justify-between");
+
+    const h3Title = document.createElement("h3");
+    h3Title.classList.add("text-sm", "text-gray-500", "mt-3", "font-semibold");
+    h3Title.textContent = element.snippet.title;
+
+    const spanTitle = document.createElement("span");
+    spanTitle.classList.add("absolute", "inset-0");
+
+    divContenedor.appendChild(linkVideo);
+    divContenedor.appendChild(divContainerImgVideo);
+    divContenedor.appendChild(containerTitle);
+
+    divContainerImgVideo.appendChild(imgVideo);
+    containerTitle.appendChild(h3Title);
+    lazyLoader.observe(imgVideo);
+    container.appendChild(divContenedor);
+  })
+}
+
+// Utils 
+
+// * lazy load 
+
+const loadPoster = (entrys, observer) => { 
+  entrys.forEach((entry) => {
+    if(entry.isIntersecting){
+      const img = entry.target;
+      const urlDataSrc = img.getAttribute("data-src");
+      entry.target.src = urlDataSrc;
+      entry.target.classList.add("img-lazyTransition")
+    }
+  })
+}
+
+const lazyLoader = new IntersectionObserver(loadPoster, {
+  root: null,
+  rootMargin: "0px 0px 0px 0px",
+  threshold: 0.2, 
+});

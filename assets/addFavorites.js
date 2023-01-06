@@ -137,7 +137,7 @@ const showArticules = (parceUrl) => {
           ${parceUrl
             .map(
               (element) => `
-            <article class="w-max mx-auto" id="${element.id}">
+            <article class="w-max mx-auto transition-opacity duration-300" id="${element.id}">
             <img 
             src="${element.img}" 
             alt="" 
@@ -156,7 +156,7 @@ const showArticules = (parceUrl) => {
             .join("")}
             `;
   content.innerHTML = `<h2
-            class=" mt-32 cursor-pointer text-center font-sans font-black text-gray-400 text-2xl md:text-4xl lg:text-6xl xl:text-8xl transition-colors duration-500 ease-out">
+            class="favoriteCardTitle mt-32 cursor-pointer text-center font-sans font-black text-gray-400 text-2xl md:text-4xl lg:text-6xl xl:text-8xl transition-colors duration-500 ease-out">
             <span class="block text-2xl h-18 md:h-18 md:text-7xl xl:h-24 xl:text-9xl">Favorite</span>
             <span
             class="block text-xl text-red-700 xl:inline transition-colors duration-500 ease-out hover:text-orange-500 md:text-4xl lg:text-6xl xl:text-8xl">Cards</span>
