@@ -10,7 +10,8 @@ const backArrow = $("back-button");
 const imgPortada = $("img-portada--main");
 const logoStream = $("logo-stream");
 
-const watchMovie = document.querySelector(".watch-movie")
+const containerWatchMovie = $("container--watch-now");
+const watchMovie = $("watch-movie")
 
 const containerTitle = $("container-title-movie");
 const containerOverview = $("container-overview");
@@ -23,5 +24,6 @@ const runtimeFacts = $("runtime--facts");
 const userScore = $("user-score");
 const traillerUrl = $("trailler-url");
 
-const recommendationsContainer = $("container-recommendations")
+const recommendationsContainer = $("container-recommendations");
 
+const containerLoadButton = $("container--load-button");

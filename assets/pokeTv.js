@@ -9,11 +9,15 @@ const RUTA_MOVIE_RECOMMENDATIONS = (id) =>
   `/movie/${id}/recommendations?api_key=`;
 const RUTA_SEARCH = "/search/movie?api_key=";
 const QUERY_SEARCH = `&query=${SEARCH}`;
+const LANGUAGE_SEARCH = "&language=en-US&region=US" ;
+const PAGE_SEARCH = (page) => `&page=${page}`;
 
 const RUTA_URL_IMG = "https://image.tmdb.org/t/p/w500/";
+
 // -------------------------------------------------------------------------//
 
-const URL_API_SEARCH = URL_API_TMDB + RUTA_SEARCH + API_KEY_TMDB + QUERY_SEARCH;
+const URL_API_SEARCH = (page) =>
+  URL_API_TMDB + RUTA_SEARCH + API_KEY_TMDB + QUERY_SEARCH + LANGUAGE_SEARCH + PAGE_SEARCH(page);
 const URL_API_MOVIE_DETAILS = (id) =>
   URL_API_TMDB + RUTA_MOVIE_DETAILS(id) + API_KEY_TMDB;
 const URL_API_MOVIE_TRAILLERS = (id) =>
@@ -34,90 +38,25 @@ const getDataTmdb = async (urlApi) => {
   return trending;
 };
 
-const showMoviesAll = async () => {
-  const result = await getDataTmdb(URL_API_SEARCH);
-  const filterResult = result.results;
-  let bestValue = sortMoviesScore(filterResult);
-  bestValue.shift();
-  bestValue.pop();
-  bestValue.pop();
-  bestValue.pop();
-  bestValue.pop();
-  bestValue.pop();
-  createPoster(listMovies, bestValue);
+const showMoviesAll = async (page1, page2, page3) => {
+  const result1 = await getDataTmdb(URL_API_SEARCH(page1));
+  const result2 = await getDataTmdb(URL_API_SEARCH(page2));
+  const result3 = await getDataTmdb(URL_API_SEARCH(page3));
+
+  const allResult = [result1.results, result2.results, result3.results].flat();
+  const filterArr = filterDuplicateObj(allResult);
+  const sortAllResult = sortMoviesScore(filterArr)
+  const bestMovies = filterMoviesWithError(sortAllResult);
+  createPoster(listMovies, bestMovies, {
+    lazyLoader: true,
+    clean: true,
+  });
 };
 
 (async () => {
   try {
-    showMoviesAll();
+    showMoviesAll(1,2);
   } catch (error) {
     console.log(error);
   }
 })();
-
-// utils][]
-const sortMoviesScore = (obj) => {
-  return obj.sort((a, b) => b.vote_average - a.vote_average);
-};
-
-const convertTime = (time) => {
-  const minutosInt = parseInt(time);
-
-  const horas = Math.floor(minutosInt / 60);
-  const minutos = minutosInt % 60;
-
-  return [horas, minutos];
-};
-
-const loadPoster = (entrys, observer) => { 
-  entrys.forEach((entry) => {
-    if(entry.isIntersecting){
-      const Poster = entry.target;
-      const urlDataSrc = Poster.getAttribute("data-src");
-      entry.target.src = urlDataSrc;
-      entry.target.classList.add("img-lazyTransition")
-    }
-  })
-}
-
-const lazyLoader = new IntersectionObserver(loadPoster, {
-  root: null,
-  rootMargin: "0px 0px 0px 0px",
-  threshold: 0.2, 
-});
-
-const createPoster = (container, movies) => {
-  container.innerHTML = "";
-  movies.forEach((element) => {
-    const imgPoster = document.createElement("img");
-    const imgUrlSrc = RUTA_URL_IMG + element.poster_path;
-    imgPoster.classList.add("w-32");
-    imgPoster.classList.add("rounded-lg");
-    imgPoster.classList.add("cursor-pointer");
-    imgPoster.classList.add("before-lazyLoading");
-    imgPoster.setAttribute("id", "id" + element.id);
-    imgPoster.setAttribute("data-src", imgUrlSrc);
-
-    //* with the lazy loading add srcURl at imgPoster
-    // imgPoster.setAttribute("src", "");
-    // imgPoster.src = RUTA_URL_IMG + element.poster_path;
-    
-    if (element.name) {
-      imgPoster.setAttribute("alt", element.name.split("").join(""));
-      imgPoster.addEventListener("click", () => {
-        location.hash = `#Details=${element.id}-${element.name
-          .split(" ")
-          .join("")}`;
-        });
-      } else {
-        imgPoster.setAttribute("alt", element.title.split("").join(""));
-        imgPoster.addEventListener("click", () => {
-          location.hash = `#Details=${element.id}-${element.title
-            .split(" ")
-            .join("")}`;
-          });
-        }
-    lazyLoader.observe(imgPoster);
-    container.appendChild(imgPoster);
-  });
-};

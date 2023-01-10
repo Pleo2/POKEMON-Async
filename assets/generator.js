@@ -1,4 +1,3 @@
-
 const minNumber = 0;
 const maxNumber = 249;
 let result = "";
@@ -11,11 +10,18 @@ const generateRandomNumber = (minNumber, maxNumber) => {
 
 const getCard = () => {
   randomNumber = generateRandomNumber(minNumber, maxNumber);
-  result = cache[randomNumber].images.small;
+  resultUrl = cache[randomNumber].images.small;
+  resultAlt = cache[randomNumber].name
+
+  return  result = {
+    url: resultUrl,
+    alt: resultAlt,
+  }
 };
 
 const showCard = () => {
-  specialCard.src = result;
+  specialCard.setAttribute("src", result.url);
+  specialCard.alt = result.alt;
 };
 
 const generateCard = () => {

@@ -27,17 +27,26 @@ const detailsPage = () => {
   title.classList.add("hidden");
   listMovies.classList.add("hidden");
   mainDetails.classList.remove("hidden");
-
-  // location.hash = ["#Details=", "id", "-", "TitleMovie"]
+  containerLoadButton.classList.add("hidden");  // location.hash = ["#Details=", "id", "-", "TitleMovie"]
   const hashMovie = location.hash.split("=")[1];
   const hashIdMovie = hashMovie.split("-")[0];
-
   (async () => {
     try {
       const detailsMovie = await getDataTmdb(URL_API_MOVIE_DETAILS(hashIdMovie));
       imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG}${detailsMovie.poster_path})`;
-      const watchNowMovie = await getDataTmdb(URL_API_MOVIE_WATCH(hashIdMovie));  
-      watchMovie.href = watchNowMovie.results.US.link;
+      const watchNowMovie = await getDataTmdb(URL_API_MOVIE_WATCH(hashIdMovie));
+
+      const objVerificador = Object.entries(watchNowMovie.results).length
+
+      if(watchNowMovie.results.US){
+        containerWatchMovie.classList.remove("hidden")
+        watchMovie.href = watchNowMovie.results.US.link;
+      } else if (watchNowMovie.results.JP) {
+        containerWatchMovie.classList.remove("hidden")
+        watchMovie.href = watchNowMovie.results.JP.link
+      } else if (objVerificador === 0) {
+        containerWatchMovie.classList.add("hidden")
+      }
 
       // font-black text-gray-300 text-3xl text-center w-max m-auto opacity-60
       containerTitle.innerHTML = "";
@@ -102,4 +111,5 @@ const homePage = () => {
   title.classList.remove("hidden");
   listMovies.classList.remove("hidden");
   mainDetails.classList.add("hidden");
+  containerLoadButton.classList.remove("hidden");
 };
