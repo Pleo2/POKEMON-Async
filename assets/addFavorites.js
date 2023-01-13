@@ -10,12 +10,12 @@ let articleParent = () => event.target.parentNode.parentNode;
 document.addEventListener("DOMContentLoaded", () => {
   favoriteArray = JSON.parse(localStorage.getItem("Favorites")) || [];
   domListener();
-  if(localStorage.Favorites) {
-    const arrowDown = null || document.getElementById("container-arrow-down");
-
-    arrowDown.innerHTML = ` <span id="down-arrows-button" class="opacity-20 scale-50 animate-ping" style="animation-duration: 2s">
-    <svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
-    </span>`
+  if(localStorage.Favorites) {  
+    arrowDown.innerHTML = `<a href="#container--favorite-cards">
+                            <span id="down-arrows-button" class="animate-ping lg:opacity-100 lg:scale-100" style="animation-duration: 3s">
+                              <svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
+                            </span>
+                          </a>`
   }
 });
 
@@ -131,60 +131,67 @@ const getArticules = () => {
 };
 
 const showArticules = (parceDataSpecialCard) => {
-  const arrowDown = null || document.getElementById("container-arrow-down");
+  const content = document.createElement("div");
+  content.classList.add("mx-auto", "w-72","h-auto", "flex", "flex-col", "gap-8", "pb-8", "md:flex-row", "md:flex-wrap", "md:w-5/6", "lg:mt-16");
   let btnNumber = 0;
   content.innerHTML = ""
-  arrowDown.innerHTML = ""
+  containerFavoriteSection.innerHTML = ""
   
   if(parceDataSpecialCard.length >= 1) {
-       
-    arrowDown.innerHTML = ` <span id="down-arrows-button" class="opacity-20 scale-50 animate-ping" style="animation-duration: 2s">
-    <svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
-    </span>`
+    
+    arrowDown.innerHTML = `<a href="#container--favorite-cards">
+                            <span id="down-arrows-button" class="animate-ping lg:opacity-100 lg:scale-100" style="animation-duration: 3s">
+                              <svg class="-rotate-90" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" height="48" width="48"><path d="m22.65 35.95-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Zm12.65 0-12-12 12-12 2.1 2.1-9.9 9.9 9.9 9.9Z"/></svg>
+                            </span>
+                           </a>`
   
-
+    
+    
     const h2Title = document.createElement("h2");
-    h2Title.classList.add("favoriteCardTitle", "mt-32", "cursor-pointer", "text-center", "font-sans", "font-black", "text-gray-400", "text-2xl", "md:text-4xl", "lg:text-6xl","xl:text-8xl", "transition-colors", "duration-500", "ease-out");
+    h2Title.classList.add("favoriteCardTitle", "mt-32", "cursor-pointer", "text-center", "font-sans", "font-black", "text-gray-400", "text-2xl", "mt-80","xl:text-8xl", "transition-colors", "duration-500", "ease-out");
   
     const favoriteSpan = document.createElement("span");
-    favoriteSpan.classList.add("block", "text-2xl", "h-18", "md:h-18", "md:text-7xl", "xl:h-24", "xl:text-9xl");
+    favoriteSpan.classList.add("block", "text-2xl", "h-18", "md:h-18", "md:text-4xl", "lg:text-6xl", "xl:h-24", "xl:text-7xl");
     favoriteSpan.textContent = "Favorite"
-  
+    
     const cardSpan = document.createElement("span");
-    cardSpan.classList.add("block", "text-xl", "text-red-700", "xl:inline", "transition-colors", "duration-500", "ease-out", "hover:text-orange-500", "md:text-4xl", "lg:text-6xl", "xl:text-8xl");
+    cardSpan.classList.add("block", "text-xl", "text-red-700", "transition-colors", "duration-500", "ease-out", "hover:text-orange-500", "md:text-3xl", "lg:text-5xl", "xl:text-6xl");
     cardSpan.textContent = "Cards"
-  
-    content.appendChild(h2Title);
+    
     h2Title.appendChild(favoriteSpan);
     h2Title.appendChild(cardSpan);
+    containerFavoriteSection.appendChild(h2Title);
   }
-
+  
+  
+  
   const imgCard  = parceDataSpecialCard.forEach(element => {
     const articleContainer = document.createElement("article");
-    articleContainer.classList.add("w-max", "mx-auto", "transition-opacity", "duration-300");
+    articleContainer.classList.add("w-max", "mx-auto", "transition-opacity", "duration-300", "w-max" );
     articleContainer.setAttribute("id", element.id);
-
+    
     const img = document.createElement("img");
     img.setAttribute("data-src", element.img);
     img.setAttribute("alt", element.alt);
-    img.classList.add("w-40", "pb-2", "mx-auto", "before-lazyLoading");
-
+    img.classList.add("w-40", "pb-2", "mx-auto", "before-lazyLoading", "lg:w-56");
+    
     const containerBtn = document.createElement("div");
     containerBtn.classList.add("w-full", "flex", "justify-center", "mt-4");
-
+    
     const deleteBtn = document.createElement("button");
     deleteBtn.setAttribute("id", `btn-delete${btnNumber++}`);
     deleteBtn.textContent = "delete card 🗑";
-    deleteBtn.classList.add("text-gray-300", "font-mono", "font-black", "text-sm", "opacity-75", "border-2", "border-gray-300", "rounded-lg", "w-48", "h-max", "pt-1");
+    deleteBtn.classList.add("text-gray-300", "font-mono", "font-black", "text-sm", "opacity-75", "border-2", "border-gray-300", "rounded-lg", "w-48", "h-max", "lg:w-56", "lg:p-2", "lg:text-lg");
 
-
+    
     lazyLoader.observe(img);
-
+    
     content.appendChild(articleContainer)
     articleContainer.appendChild(img);
     articleContainer.appendChild(containerBtn);
     containerBtn.appendChild(deleteBtn);
   })
+  containerFavoriteSection.appendChild(content);
 };
 
 const runfavoriteBtn = () => {

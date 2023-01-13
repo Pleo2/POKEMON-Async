@@ -37,7 +37,7 @@ const createPoster = (
   movies.forEach((element) => {
     const imgPoster = document.createElement("img");
     const imgUrlSrc = RUTA_URL_IMG + element.poster_path;
-    imgPoster.classList.add("w-32");
+    imgPoster.classList.add("w-32", "md:w-40", "xl:w-52");
     imgPoster.classList.add("rounded-lg");
     imgPoster.classList.add("cursor-pointer");
     imgPoster.classList.add("before-lazyLoading");

@@ -11,8 +11,9 @@ const RUTA_SEARCH = "/search/movie?api_key=";
 const QUERY_SEARCH = `&query=${SEARCH}`;
 const LANGUAGE_SEARCH = "&language=en-US&region=US" ;
 const PAGE_SEARCH = (page) => `&page=${page}`;
-
+ 
 const RUTA_URL_IMG = "https://image.tmdb.org/t/p/w500/";
+const RUTA_URL_IMG_ORIGINAL_QUALITY = "https://image.tmdb.org/t/p/original/";
 
 // -------------------------------------------------------------------------//
 

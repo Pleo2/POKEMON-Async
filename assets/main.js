@@ -1,5 +1,5 @@
 const APIyoutube =
-  "https://youtube-v31.p.rapidapi.com/search?channelId=UCcqvmc1uRblenC_-z2pizfA&part=snippet%2Cid&order=date&maxResults=9";
+  "https://youtube-v31.p.rapidapi.com/search?channelId=UCcqvmc1uRblenC_-z2pizfA&part=snippet%2Cid&order=date&maxResults=16";
 
   
   const options = {

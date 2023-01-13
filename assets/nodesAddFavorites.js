@@ -10,4 +10,5 @@ const btnSelect = (number) => $(`btn-delete${number}`);
 const btnStart = $("start-button");
 const loadingSpinner = $("loading-spinner");
 
-const content = null || document.querySelector(".favorite-Cards");
+const containerFavoriteSection = $("container--favorite-cards");
+const arrowDown = $("container-arrow-down");

@@ -33,9 +33,19 @@ const detailsPage = () => {
   (async () => {
     try {
       const detailsMovie = await getDataTmdb(URL_API_MOVIE_DETAILS(hashIdMovie));
-      imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG}${detailsMovie.poster_path})`;
+      console.log(detailsMovie)
+      if(window.matchMedia("(min-width: 728px)").matches) {
+        imgPortada.style.backgroundImage = ""
+        if(detailsMovie.backdrop_path){
+          imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG_ORIGINAL_QUALITY}${detailsMovie.backdrop_path}`
+        } else {
+          imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG_ORIGINAL_QUALITY}${detailsMovie.poster_path})`;
+        }
+      } else {
+        imgPortada.style.backgroundImage = ""
+        imgPortada.style.backgroundImage = `url(${RUTA_URL_IMG}${detailsMovie.poster_path})`;
+      }
       const watchNowMovie = await getDataTmdb(URL_API_MOVIE_WATCH(hashIdMovie));
-
       const objVerificador = Object.entries(watchNowMovie.results).length
 
       if(watchNowMovie.results.US){
